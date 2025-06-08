@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de DevOps de Sergio Caballero">
+    <meta name="author" content="Sergio Caballero">
+    <title>Sergio Caballero | DevOps Enthusiast</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-animation">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Sobre mí</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#" id="open-contact-modal">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1 id="animated-name" class="highlight"></h1>
+            <p><b>Service Desk Analyst</b> en JAAK</p>
+            <p class="about-hero">Estudiante de Ingeniería en Computación con experiencia en la administración y operación de infraestructura en la nube. Domino herramientas como Kubernetes, Terraform y Prometheus, además de entornos multi-cloud en AWS, Azure y GCP. Me especializo en automatización, monitoreo y optimización de servicios</p>
+            <button class="cta-btn">
+                Ver mis proyectos
+                <span class="cta-icon"><i class="fas fa-arrow-right"></i></span>
+            </button>
+        </div>
+        <div class="hero-decor">
+            <!-- Figura geométrica decorativa -->
+            <div class="circle"></div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="animated-title">Proyectos destacados</h2>
+            <div class="project-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Implementación de Observabilidad</h3>
+                        <p>Establecí un sistema de observabilidad en servicios en la nube utilizando Prometheus, Loki y Grafana, integrando alertas y realizando análisis exhaustivo de logs para mejorar la operatividad.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Optimización de Rendimiento</h3>
+                        <p>Analicé métricas y registros en tiempo real para la prevención de incidencias y la optimización de servicios críticos en clústeres Kubernetes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Gestión de Kubernetes</h3>
+                        <p>Administré clústeres Kubernetes en múltiples plataformas (AKS, GKE) e integré microservicios mediante herramientas como Helm y configuraciones en Terraform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="close-modal" id="close-contact-modal">&times;</span>
+            <h2>Contacto</h2>
+            <p>¡Gracias por visitar mi portafolio! Puedes contactarme directamente por correo electrónico.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sergiocaballero" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sergiocaballeroo" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="sergio_jair4@hotmail.com" class="social-icon" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <div class="footer-text">
+                <span>Creado por Sergio Caballero &copy; 2023</span>
+                <span class="footer-dot">·</span>
+                <span>DevOps | Automatización | Cloud</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Agregar el archivo de JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('loader').style.display = 'none';
+        });
+
+        // Elimina cualquier animación de nombre duplicada
+        document.addEventListener('DOMContentLoaded', () => {
+            const nameElement = document.getElementById('animated-name');
+            if (nameElement) {
+                nameElement.textContent = 'Sergio Caballero';
+            }
+        });
+
+        // Abrir modal de contacto
+        document.getElementById('open-contact-modal').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('contact-modal').style.display = 'flex';
+        });
+
+        // Cerrar modal de contacto
+        document.getElementById('close-contact-modal').addEventListener('click', () => {
+            document.getElementById('contact-modal').style.display = 'none';
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('contact-modal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
